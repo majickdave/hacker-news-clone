@@ -6,7 +6,7 @@ export default () => (
          <p>and I am working on this clone of Hacker News because I love Hacker News.</p>
          <a href="https://majickdave.github.io"><button style={{"border": "1px solid black", "backgroundColor": "white",
          "padding": "10px",
-         "box-shadow": "3px 4px"}} >
+         "boxShadow": "3px 4px"}} >
            check out my website
          </button></a>
     </Layout>
