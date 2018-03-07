@@ -5,6 +5,9 @@ const Post = ({ item }) => (
   <Layout>
      <h1>{item.title}</h1>
      <p>URL: <a target="_blank" href={item.url}>{item.url}</a></p>
+     <p>Posted on: {Date(item.time)}</p>
+     <p>by: {item.by}</p>
+     <p>score: {item.score}</p>
   </Layout>
 )
 

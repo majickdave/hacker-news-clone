@@ -3,17 +3,17 @@ import Link from 'next/link'
 import loadDB from '../lib/load-db'
 
 const PostLink = (props) => (
-  <li>
+  <li style={{"padding": "20px"}}>
     <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
-      <a>{props.title}</a>
+      <a >{props.title}</a>
     </Link>
   </li>
 )
 
 const Index = ({ stories }) => (
   <Layout>
-    <h1>Hacker News - Latest</h1>
-    <ul>
+    <h1 style={{"textAlign": "center"}}>Dave's NextJS HN Clone</h1>
+    <ul >
       {stories.map(story => (
         <PostLink
           key={story.id}
@@ -30,7 +30,7 @@ Index.getInitialProps = async () => {
 
   const ids = await db.child('topstories').once('value')
   let stories = await Promise.all(
-    ids.val().slice(0, 10).map(id => db
+    ids.val().slice(0, 50).map(id => db
       .child('item')
       .child(id)
       .once('value')
