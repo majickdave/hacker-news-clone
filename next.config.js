@@ -2,6 +2,9 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const { ANALYZE } = process.env
 
 module.exports = {
+  options: {
+    dest: '.next'
+  },
   webpack: function (config) {
     if (ANALYZE) {
       config.plugins.push(new BundleAnalyzerPlugin({
