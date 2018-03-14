@@ -3,17 +3,40 @@ import Link from 'next/link'
 import loadDB from '../lib/load-db'
 
 const PostLink = (props) => (
-  <li style={{"padding": "20px"}}>
-    <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
-      <a >{props.title}</a>
-    </Link>
-  </li>
+  <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
+  <div style={{"border": "1px solid grey", "padding": "20px", "boxShadow": "10px 10px 5px #aaaaaa"}}>
+
+        <p><a>{props.title}</a></p>
+
+    <style jsx>{`
+
+      div {
+        margin: 30px auto;
+        padding-top: 50px;
+      }
+
+      a {
+        font-family: "Lucida Console", Monaco, monospace;
+        font-size: 150%;
+      }
+
+      div:hover {
+        opacity: 0.6;
+        cursor: pointer;
+        color: green;
+        -webkit-transform: scale(1.05, 1.1) 
+
+      }
+
+    `}</style>
+  </div>
+  </Link>
 )
 
 const Index = ({ stories }) => (
   <Layout>
     <h1 style={{"textAlign": "center"}}>Dave's NextJS HN Clone</h1>
-    <ul >
+    <div>
       {stories.map(story => (
         <PostLink
           key={story.id}
@@ -21,7 +44,17 @@ const Index = ({ stories }) => (
           title={story.title}
         />
       ))}
-    </ul>
+    </div>
+    <style jsx>{`
+      h1 {
+        "Courier New", Courier, monospace;
+      }
+
+      div {
+        padding-top: 50px;
+      }
+
+    `}</style>
   </Layout>
 )
 

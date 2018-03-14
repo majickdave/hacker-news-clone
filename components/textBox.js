@@ -6,7 +6,7 @@ const layoutStyle = {
 
 const TextBox = (props) => (
   <div style={layoutStyle}>
-      <p style={{"textAlign": "justify", "font-size": "2em"}}>{props.children}</p>
+      <p style={{"textAlign": "justify", "font-size": "3em"}}>{props.children}</p>
   </div>
 )
 

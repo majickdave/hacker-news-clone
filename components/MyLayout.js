@@ -1,9 +1,9 @@
 import Header from './Header'
 
 const layoutStyle = {
-  margin: 20,
+  margin: 5,
   padding: 20,
-  border: '1px solid #DDD'
+  border: '0'
 }
 
 const Layout = (props) => (
