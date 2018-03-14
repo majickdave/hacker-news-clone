@@ -3,27 +3,46 @@ import loadDB from '../lib/load-db'
 import dateFormat from 'dateformat';
 
 const Post = ({ item }) => (
-  <Layout>
-     <h1>{item.title}</h1>
-     <p>URL: <a target="_blank" href={item.url}>{item.url}</a></p>
-     <p>Posted on: {dateFormat(Date(item.time), "dddd, mmmm dS, yyyy, h:MM:ss TT")}</p>
-     <p>by: {item.by}</p>
-     <p>score: {item.score}</p>
+
+  <Layout >
+    <div className="article">
+       <h1>{item.title}</h1>
+       <p className="url"><a target="_blank" href={item.url}>{item.url}</a></p>
+       <p>Posted on: {dateFormat(Date(item.time), "dddd, mmmm dS, yyyy, h:MM:ss TT")}</p>
+       <p>by: {item.by}</p>
+       <p>score: {item.score}</p>
+    </div>
+     <style>
+       @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+     </style>
      <style jsx>{`
 
+       .article {
+         border: none;
+         background: #e0f2f1;
+         max-width: 100%;
+         padding: 15px;
+         box-shadow: 5px 6px 10px lightgray;
+       }
+
        p {
-         padding-top: 50px;
-         font-family: "Lucida Console", Monaco, monospace;
+         font-family: Helvetica, Arial, sans-serif;
          text-decoration: none;
-         font-size: 150%;
+         padding-top: 25px;
+         padding-bottom: 25px;
 
        }
 
-       a:hover {
-         opacity: 0.6;
-         cursor: pointer;
-         color: red;
+       .url {
+          text-align: center;
+          padding-top: 100px;
+          padding-bottom: 100px;
+          font-size: 1.5em;
+       }
 
+       h1 {
+         text-align: center;
+         font-family: 'Permanent Marker', cursive;
        }
 
      `}</style>

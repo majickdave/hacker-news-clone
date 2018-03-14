@@ -3,43 +3,54 @@ import Link from 'next/link'
 import loadDB from '../lib/load-db'
 
 const PostLink = (props) => (
-  <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
-  <div style={{"border": "1px solid grey", "padding": "20px", "width": "100%"}}>
+  <ul>
 
-        <p><a>{props.title}</a></p>
-
+    <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
+      <a>
+        <div className="article">
+          <p style={{"fontSize": "3em"}}>
+            {props.title}
+          </p>
+        </div>
+      </a>
+    </Link>
     <style jsx>{`
 
-      div {
-        margin-top: 50px;
-        padding-top: 50px;
-        box-shadow: 10px 10px 5px #aaaaaa;
-        text-align: justify;
-        font-family: 'Raleway', sans-serif;
-        font-size: 1.8em;
+      .article {
+        border: 1px solid lightgray;
+        box-shadow: 5px 6px 10px lightgray;
+        background: #eee;
+        margin-top: 15px;
+        padding-top: 25px;
+        padding: 15px;
+        max-width: 95%;
       }
 
+      a {
+        font-family: Helvetica, Arial, sans-serif;
+        text-decoration: none;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        text-align: justify;
+
+      }
 
       div:hover {
+        background: #e0f2f1;
         opacity: 0.6;
         cursor: pointer;
         color: red;
-        background: #c3fdff;
-        box-shadow: none;
-        text-align: center;
-
+        box-shadow: 5px 6px 10px #e0f2f1;
       }
 
     `}</style>
-
-  </div>
-  </Link>
+  </ul>
 )
 
 const Index = ({ stories }) => (
   <Layout>
-    <h1 style={{"padding": "20px", "fontSize": "64px"}}>Hacker News Clone</h1>
-    <div>
+    <h1 style={{"fontSize": "64px", "textAlign": "center"}}>Dave's Hacker News</h1>
+    <div >
       {stories.map(story => (
         <PostLink
           key={story.id}
@@ -48,6 +59,18 @@ const Index = ({ stories }) => (
         />
       ))}
     </div>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Permanent+Marker');
+    </style>
+    <style jsx>{`
+
+      h1 {
+        font-family: 'Permanent Marker', cursive;
+
+      }
+
+    `}</style>
+
   </Layout>
 )
 
