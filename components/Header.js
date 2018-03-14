@@ -5,7 +5,7 @@ const linkStyle = {
 }
 
 const Header = () => (
-    <div style={{"textAlign": "center"}}>
+    <div style={{"textAlign": "center", "fontSize": "1.5em"}}>
         <Link href="/">
           <a style={linkStyle}>Home</a>
         </Link>

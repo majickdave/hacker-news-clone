@@ -4,38 +4,41 @@ import loadDB from '../lib/load-db'
 
 const PostLink = (props) => (
   <Link as={`/p/${props.id}`} href={`/post?id=${props.id}`}>
-  <div style={{"border": "1px solid grey", "padding": "20px", "boxShadow": "10px 10px 5px #aaaaaa"}}>
+  <div style={{"border": "1px solid grey", "padding": "20px", "width": "100%"}}>
 
         <p><a>{props.title}</a></p>
 
     <style jsx>{`
 
       div {
-        margin: 30px auto;
+        margin-top: 50px;
         padding-top: 50px;
+        box-shadow: 10px 10px 5px #aaaaaa;
+        text-align: justify;
+        font-family: 'Raleway', sans-serif;
+        font-size: 1.8em;
       }
 
-      a {
-        font-family: "Lucida Console", Monaco, monospace;
-        font-size: 150%;
-      }
 
       div:hover {
         opacity: 0.6;
         cursor: pointer;
-        color: green;
-        -webkit-transform: scale(1.05, 1.1) 
+        color: red;
+        background: #c3fdff;
+        box-shadow: none;
+        text-align: center;
 
       }
 
     `}</style>
+
   </div>
   </Link>
 )
 
 const Index = ({ stories }) => (
   <Layout>
-    <h1 style={{"textAlign": "center"}}>Dave's NextJS HN Clone</h1>
+    <h1 style={{"padding": "20px", "fontSize": "64px"}}>Hacker News Clone</h1>
     <div>
       {stories.map(story => (
         <PostLink
@@ -45,16 +48,6 @@ const Index = ({ stories }) => (
         />
       ))}
     </div>
-    <style jsx>{`
-      h1 {
-        "Courier New", Courier, monospace;
-      }
-
-      div {
-        padding-top: 50px;
-      }
-
-    `}</style>
   </Layout>
 )
 

@@ -12,7 +12,6 @@ const Post = ({ item }) => (
      <style jsx>{`
 
        p {
-         margin: 30px auto;
          padding-top: 50px;
          font-family: "Lucida Console", Monaco, monospace;
          text-decoration: none;
@@ -24,6 +23,7 @@ const Post = ({ item }) => (
          opacity: 0.6;
          cursor: pointer;
          color: red;
+
        }
 
      `}</style>
