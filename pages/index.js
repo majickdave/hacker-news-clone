@@ -43,6 +43,7 @@ const PostLink = (props) => (
         box-shadow: 5px 6px 10px #e0f2f1;
       }
 
+
     `}</style>
   </ul>
 )
